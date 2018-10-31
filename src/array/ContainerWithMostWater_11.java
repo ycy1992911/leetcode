@@ -6,7 +6,7 @@ package array;
  * @author chongyang18@gmail.com
  * @date 31/05/2018
  */
-public class ContainerWithMostWater {
+public class ContainerWithMostWater_11 {
     private static int maxArea(int[] height) {
         int maxSize = 0;
         int head = 0;
