@@ -27,8 +27,4 @@ public class ContainerWithMostWater {
 
         return maxSize;
     }
-
-    public static void main(String[] args) {
-        System.out.println(maxArea(new int[]{1, 2, 1}));
-    }
 }

@@ -1,6 +1,8 @@
 package array;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Given an array S of n integers, are there elements a, b, c in S such that a + b + c = 0
@@ -14,7 +16,6 @@ public class ThreeSum {
     public static List<List<Integer>> threeSum(int[] nums) {
         List<Integer> list = new ArrayList<>();
         List<List<Integer>> listSet = new ArrayList<>();
-        Set<Integer> set = new HashSet<>();
         Arrays.sort(nums);
 
         for (int i = 0; i < nums.length - 2; i++) {
@@ -39,12 +40,5 @@ public class ThreeSum {
             }
         }
         return listSet;
-    }
-
-    public static void main(String[] args) {
-        List<List<Integer>> list = threeSum(new int[]{-1, 0, 1, 2, -1, -4});
-        for (List<Integer> l : list) {
-            System.out.println(l);
-        }
     }
 }
