@@ -91,6 +91,7 @@ class RangeSumOfBST_938Test {
 
         TreeNode root = buildBinarySearchTree(list);
         assertEquals(32, solution.rangeSumBST(root, L, R));
+        assertEquals(32, solution.rangeSumTree(root, L, R));
     }
 
     @Test
@@ -100,6 +101,7 @@ class RangeSumOfBST_938Test {
         R = 10;
 
         TreeNode root = buildBinarySearchTree(list);
+        assertEquals(23, solution.rangeSumTree(root, L, R));
         assertEquals(23, solution.rangeSumBST(root, L, R));
     }
 }

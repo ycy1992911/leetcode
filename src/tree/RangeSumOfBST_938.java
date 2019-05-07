@@ -1,7 +1,5 @@
 package tree;
 
-import java.util.HashSet;
-import java.util.Set;
 import java.util.Stack;
 
 /**
@@ -23,35 +21,26 @@ public class RangeSumOfBST_938 {
     /**
      * non recursive
      *
-     * @param tree
+     * @param root
      * @param L
      * @param R
      * @return
      */
-    int rangeSumBST(TreeNode tree, int L, int R) {
-        if (tree.left == null && tree.right == null) {
-            return tree.val > L && tree.val < R ? tree.val : -1;
-        }
-
-        return sum(getValueListFromTree(tree, L, R));
-    }
-
-    private int sum(Set<Integer> valueList) {
-        return valueList.stream().reduce(Integer::sum).orElse(0);
-    }
-
-    private Set<Integer> getValueListFromTree(TreeNode root, int L, int R) {
+    int rangeSumBST(TreeNode root, int L, int R) {
         if (root == null) {
-            return null;
+            return 0;
+        }
+        if (root.left == null && root.right == null) {
+            return root.val > L && root.val < R ? root.val : -1;
         }
 
-        Set<Integer> values = new HashSet<>();
+        int sum = 0;
         Stack<TreeNode> stack = new Stack<>();
         stack.push(root);
         while (!stack.isEmpty()) {
             TreeNode head = stack.pop();
             if (head.val >= L && head.val <= R) {
-                values.add(head.val);
+                sum += head.val;
             }
             if (head.right != null) {
                 stack.push(head.right);
@@ -61,7 +50,7 @@ public class RangeSumOfBST_938 {
             }
         }
 
-        return values;
+        return sum;
     }
 
     /**
@@ -83,6 +72,6 @@ public class RangeSumOfBST_938 {
             return rangeSumTree(node.left, L, R);
         }
 
-        return node.val + rangeSumTree(node.left, L, R) + rangeSumTree(node.right, L, R);
+        return node.val + rangeSumBST(node.right, L, R) + rangeSumBST(node.left, L, R);
     }
 }
