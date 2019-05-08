@@ -1,5 +1,7 @@
 package tree;
 
+import utils.TreeNode;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -23,17 +25,6 @@ import java.util.Stack;
  * @author yancy3@lenovo.com
  * @date 31/10/2018
  */
-
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode(int x) {
-        val = x;
-    }
-}
-
 public class BinaryTreePostorderTraversal_145 {
     public List<Integer> postorderTraversal(TreeNode root) {
         List<Integer> list = new ArrayList<>();

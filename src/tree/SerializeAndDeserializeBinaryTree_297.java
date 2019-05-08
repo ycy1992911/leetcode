@@ -1,5 +1,7 @@
 package tree;
 
+import utils.TreeNode;
+
 import java.util.ArrayDeque;
 import java.util.Queue;
 
@@ -78,7 +80,7 @@ public class SerializeAndDeserializeBinaryTree_297 {
         String[] ans = sb.deleteCharAt(sb.length() - 1).toString().split(",");
         sb = new StringBuilder();
         int i = ans.length - 1;
-        while (ans[i].equals("null")) {
+        while ("null".equals(ans[i])) {
             i--;
         }
 

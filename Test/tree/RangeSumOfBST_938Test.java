@@ -2,7 +2,7 @@ package tree;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import tree.RangeSumOfBST_938.TreeNode;
+import utils.TreeNode;
 
 import java.util.*;
 import java.util.stream.Collectors;

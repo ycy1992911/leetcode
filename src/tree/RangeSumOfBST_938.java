@@ -1,5 +1,7 @@
 package tree;
 
+import utils.TreeNode;
+
 import java.util.Stack;
 
 /**
@@ -7,16 +9,6 @@ import java.util.Stack;
  * created on 2019-05-07
  */
 public class RangeSumOfBST_938 {
-
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-    }
 
     /**
      * non recursive
