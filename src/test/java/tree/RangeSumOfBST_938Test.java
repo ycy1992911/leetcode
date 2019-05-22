@@ -23,7 +23,7 @@ class RangeSumOfBST_938Test {
         List<TreeNode> nodes = nodeValues.stream().filter(Objects::nonNull).map(TreeNode::new).collect(Collectors.toList());
         Queue<TreeNode> parents = new ArrayDeque<>(nodes);
 
-        TreeNode bstRoot = null;
+        TreeNode bstRoot;
         parents.add(nodes.get(0));
         int index = 1;
         while (!parents.isEmpty() && index < nodes.size()) {
